@@ -1,7 +1,11 @@
 # Import/Export to Azure Key Vault from EXL sheet using python scripts
-Here is the python scripts to Import the Key and Values from Exl sheet or Export(Scan) the Key values from the Azure Key Vault
+Here is the python scripts to Import the Secret's Key and Values from Exl sheet or Export(Scan) the Secret's Key values from the Azure Key Vault
+### Use case:
+   -	If you want to extract the Secret's Key and Values from AzureKeyVault and create exl sheet  use **Export-Kv-To-Exl.py** 
+   -	If you want create Secret's from exl sheet use **Import-Kv-Frm-Exl.py** ( it will read the Exl sheet and create  Secret's in Key Vault)
+
 ## Prerequisite
--	 Key Vault permission 'get' and 'list' to export the Key Values from Azure-KeyVault and 'set' permission if want Import the values from Exl to Azure-KeyVault
+-	 Key Vault Secret's permission 'get' and 'list' to export the Key Values from Azure-KeyVault and 'set' permission if want Import the values from Exl to Azure-KeyVault
 -	 Az login
 -	 Python packages if see any package error's 
 ## Export(Scan) the Azure KeyVult
