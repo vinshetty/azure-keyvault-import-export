@@ -8,5 +8,5 @@ Here is the python scripts to Import the Key and Values from Exl sheet or Export
   ```
    python3 Export-Kv-To-Exl.py -kv=mykeyvault
   ```
-  -- As Output it show in terminal and as well create EXL as mykeyvault-CurrentDate.xlsx
+  - As Output it show in terminal and as well create EXL as mykeyvault-CurrentDate.xlsx
 ## OutPut/Result
