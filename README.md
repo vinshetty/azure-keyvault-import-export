@@ -18,4 +18,4 @@ Here is the python scripts to Import the Secret's Key and Values from Exl sheet 
    python3 Import-Kv-Frm-Exl.py -kv=mykeyvault-import -exl=mykeyvault.xlsx
   ```
   - Exl sheet heading should be **Key** and **value** then it will read the exl sheet 
-    - ![This ref Image]( https://github.com/vinshetty/azure-keyvault-import-export/blob/main/exlimage.PNG)
+    - ![This ref Image](exlimage.PNG)
