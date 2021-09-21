@@ -35,12 +35,18 @@ try:
    secret_client = SecretClient(vault_url=KVUri, credential=credential)
    secret_properties = secret_client.list_properties_of_secrets()
    for secret_property in secret_properties:
-      secret = secret_client.get_secret(secret_property.name)
-      ws.cell(row=r, column=1).value = secret.name
-      ws.cell(row=r, column=2).value = secret.value
-      r += 1
-      printresults.append([secret.name, secret.value])
+          secretcheck = (secret_property.enabled)
+          #print(secretcheck)
+          if secretcheck == True:
+              secret = secret_client.get_secret(secret_property.name)
+              ws.cell(row=r, column=1).value = secret.name
+              ws.cell(row=r, column=2).value = secret.value
+              r += 1
+              printresults.append([secret.name, secret.value])
+          else:
+              print(secret_property.name + " This seceret is disabled")
 except Exception as e:
+  print(e)  
   print("Something went wrong", type(e).__name__)
   pass
 date = datetime.datetime.now().date()
