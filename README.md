@@ -1,21 +1,19 @@
-# Import/Export to Azure Key Vault from EXL sheet using python scripts
-Here is the python scripts to Import the Secret's Key and Values from Exl sheet or Export(Scan) the Secret's Key values from the Azure Key Vault
-### Use case:
-   -	If you want to extract the Secret's Key and Values from AzureKeyVault and create exl sheet  use **Export-Kv-To-Exl.py** 
-   -	If you want create Secret's from exl sheet use **Import-Kv-Frm-Exl.py** ( it will read the Exl sheet and create  Secret's in Key Vault)
+python3 Export-Kv-To-Exl.py -kv=mykeyvault
+```
 
-## Prerequisite
--	 Key Vault Secret's permission 'get' and 'list' to export the Key Values from Azure-KeyVault and 'set' permission if want Import the values from Exl to Azure-KeyVault
--	 Az login
--	 Python packages if see any package error's 
-## Export(Scan) the Azure KeyVult
-  ```
-   python3 Export-Kv-To-Exl.py -kv=mykeyvault
-  ```
-  - As Output it show in terminal and as well create EXL as mykeyvault-CurrentDate.xlsx
-## Import the Key and Values from Exl sheet to Azure Key Vault
-  ```
-   python3 Import-Kv-Frm-Exl.py -kv=mykeyvault-import -exl=mykeyvault.xlsx
-  ```
-  - Exl sheet heading should be **Key** and **value** then it will read the exl sheet 
-    - ![This ref Image](exlimage.PNG)
+Replace `mykeyvault` with the name of your key vault. The script will output the number of secrets exported and the file name in the terminal. You can open the Excel file and verify that it contains your secrets.
+
+### How to import secrets from an Excel sheet to Azure Key Vault?
+To import secrets from an Excel sheet to Azure Key Vault, you can use the **Import-Kv-Frm-Exl.py** script. This script will read an Excel file with two columns: Key and Value, and create secrets in your key vault with the same names and values.
+
+To run the script, open a terminal and type the following command:
+
+```
+python3 Import-Kv-Frm-Exl.py -kv=mykeyvault-import -exl=mykeyvault.xlsx
+```
+
+Replace `mykeyvault-import` with the name of your destination key vault and `mykeyvault.xlsx` with the name of your source Excel file. The script will output the number of secrets imported and their names in the terminal. You can check your key vault and verify that it contains your secrets.
+
+### Conclusion
+In this blog post, I showed you how to import and export secrets to Azure Key Vault from an Excel sheet using Python scripts. This can be handy if you want to backup your secrets, migrate them to another key vault, or create them from a spreadsheet. I hope you found this useful and feel free to leave your feedback or questions in the comments section below.
+```
